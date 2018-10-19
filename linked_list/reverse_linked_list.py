@@ -4,13 +4,14 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def reverseList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        #iterative
+        # iterative
         if head is None:
             return None
 
@@ -25,21 +26,18 @@ class Solution:
 
         return previous
 
-
-
-
-
-
-
-
-
+    def use_recursion(self, head, previous=None):
+        if head is None or head.next is None:
+            head.next = previous
+            return head
+        tmp = head.next
+        head.next = previous
+        previous = head
+        return self.use_recursion(tmp, previous)
 
 
 a = ListNode(1)
-b=ListNode(2)
-c=ListNode(3)
-a.next =b
+b = ListNode(2)
+c = ListNode(3)
+a.next = b
 b.next = c
-
-s= Solution()
-s.reverseList(a)
