@@ -5,33 +5,21 @@ class ListNode:
         self.val = x
         self.next = None
 
-class Solution:
+class Solution(object):
     def middleNode(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        if head is None:
-            return None
-        first = head
-        second = head
-        while True:
-            for i in range(2):
-                tmp = second.next
-                if tmp is None:
-                    if i == 0:
-                        return first
-                    else:
-                        return first.next
-                else:
-                    second = tmp
-            first = first.next
-
-
-
-
-
-
+        if head.next is None:
+            return head
+        else:
+            slow = head
+            fast = head
+            while fast is not None and fast.next is not None:
+                slow = slow.next
+                fast = fast.next.next
+            return slow
 
 
 
