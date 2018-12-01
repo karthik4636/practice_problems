@@ -5,43 +5,28 @@ class Interval:
         self.start = s
         self.end = e
 
-class Solution:
 
-    def merge2(self,x,y):
-        b = None
-        if y.start <= x.end:
-            if y.end > x.end:
-                b=y.end
-            else:
-                b=x.end
-            return True,Interval(x.start,b)
-        return False, None
-
-
-
-
-
-
+class Solution(object):
     def merge(self, intervals):
         """
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
-        intervals = sorted(intervals,key=lambda x:x.start)
-        i = 0
-        while i <= len(intervals)-1:
-            try:
-                merged, merged_interval=self.merge2(intervals[i],intervals[i+1])
-                if merged:
-                    del intervals[i]
-                    intervals[i] = merged_interval
-                else:
-                    i+=2
-            except IndexError:
-                return intervals
-        return intervals
+        if len(intervals) == 0:
+            return []
+        # sort
+        result = []
+        intervals.sort(key=lambda i: i.start)
 
+        for i in intervals:
+            if len(result) == 0:
+                result.append(i)
+            if i.start <= result[-1].end and i.end > result[-1].end:
+                result[-1].end = i.end
+            elif i.start > result[-1].end:
+                result.append(i)
 
+        return result
 
 
 s = Solution()
