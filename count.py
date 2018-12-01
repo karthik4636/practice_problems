@@ -4,6 +4,7 @@ path, dirs, files = next(os.walk("/home/karthik/Desktop/interview_prep/practice_
 for dir in ['trees','linked_list', 'arrays_and_strings']:
     path, dirs, files = next(
         os.walk(dir))
+    print(dir, len(files))
     count+=len(files)
 
-print(count-3)
+print(count)
