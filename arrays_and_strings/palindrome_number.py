@@ -9,10 +9,5 @@ class Solution:
         """
         pass
 
-    # without conversion to string
-    def is_palindrome(self):
-        pass
-
-
 
 
