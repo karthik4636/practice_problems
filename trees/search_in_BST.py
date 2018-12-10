@@ -7,6 +7,8 @@
 #         self.left = None
 #         self.right = None
 
+
+from helpers.create_bst import insertIntoBST , TreeNode
 class Solution:
     def searchBST(self, root, val):
         """
@@ -27,8 +29,22 @@ class Solution:
                 return self.searchBST(root.left, val)
 
     def iterative_approach(self, root, val):
-        pass
+
+        curr = root
+
+        while True:
+            if curr is None or curr.val == val:
+                return curr
+            elif curr.val <= val:
+                curr = curr.right
+            elif curr.val > val:
+                curr = curr.left
+
+
+test_root = TreeNode(1)
+for i in range(10):
+    insertIntoBST(test_root,i)
 
 
 s = Solution()
-s.searchBST(None, 5)
+b=s.iterative_approach(test_root, 5)
