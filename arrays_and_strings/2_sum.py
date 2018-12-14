@@ -9,7 +9,7 @@ class Solution:
         for index,num in enumerate(nums):
            k[num] = index
 
-        for index,num in enumerate(nums):
+        for  index,num in enumerate(nums):
             if target - num in k and k[target-num]!=index:
                 return index,k[target-num]
 
