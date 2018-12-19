@@ -1,5 +1,6 @@
 #https://www.youtube.com/watch?v=SLauY6PpjW4
-
+# O(nlogn) run time
+# O(1) space
 
 def partition(arr, left, right):
     pivot = (left + right) // 2
