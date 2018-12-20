@@ -8,6 +8,7 @@
 
 #Note : if there is no intersection both pointers point to None, else they
 # point to the intersection
+# we can use another list to store all objects but it will cost O(n) space.
 
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
