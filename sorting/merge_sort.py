@@ -1,7 +1,8 @@
 #https://www.youtube.com/watch?v=Nso25TkBsYI
 # there are log n steps and each element is gone through n times. SO for n
 # elements run time is o(n log n)
-
+#preferable for large datasets . Always gives O(n log n) run time but uses O(
+# n) space
 
 def merge_two_halves(arr, left, right):
     left_pointer = 0
