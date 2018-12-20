@@ -36,10 +36,10 @@ def merge_sort(arr):
     right = arr[mid:]
     merge_sort(left)
     merge_sort(right)
-    arr = merge_two_halves(arr, left, right)
+    merge_two_halves(arr, left, right)
     return arr
 
 
 
-a=merge_sort([1,6,5,-10,100,4,5,90,97,0,8,67,59,-89,-69])
+a=merge_sort([1,6,5])
 print(a)
