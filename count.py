@@ -1,7 +1,8 @@
 import os
 count = 0
 path, dirs, files = next(os.walk("/home/karthik/Desktop/interview_prep/practice_problems"))
-for dir in ['trees','linked_list', 'arrays_and_strings',"sorting"]:
+for dir in ['trees','linked_list', 'arrays_and_strings',"sorting",
+            "dynamic_programming"]:
     path, dirs, files = next(
         os.walk(dir))
     print(dir, len(files))
