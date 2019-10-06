@@ -1,5 +1,5 @@
 #https://helloacm.com/algorithms-to-count-the-number-of-palindromic-substrings/
-#https://leetcode.com/problems/longest-palindromic-substring/
+#https://leetcode.com/problems/palindromic-substrings/
 class Solution(object):
     def countSubstrings(self, S):
         count = 0
