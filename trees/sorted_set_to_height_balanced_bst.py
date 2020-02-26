@@ -6,9 +6,6 @@ class TreeNode:
         self.right = None
 
 class Solution:
-
-
-
     def sortedArrayToBST(self, nums):
         if nums:
             size = len(nums)
