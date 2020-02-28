@@ -16,7 +16,6 @@ class Solution():
         print(root.val)
         if root.val >= L and  root.val <=R:
                 sum += root.val + self.rangeSumBST(root.left, L, R, sum)+ self.rangeSumBST(root.right, L, R, sum)
-                print("sum",sum)
         elif root.val > L and root.val > R:
             sum +=  self.rangeSumBST(root.left, L, R, sum)
         elif root.val < L and root.val < R:
