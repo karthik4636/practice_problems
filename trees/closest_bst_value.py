@@ -8,7 +8,6 @@ class Solution:
     def closestValue(self, root , target):
         if root is None:
             return
-
         if abs(self.closestV-target) > abs(root.val-target):
             self.closestV = root.val
         if target > root.val:
