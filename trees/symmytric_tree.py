@@ -8,7 +8,6 @@ class Solution:
         if a is None or b is None:
             return False
         r = (a.val == b.val) and self.is_mirror(a.left, b.right) and self.is_mirror(a.right, b.left)
-
         return r
 
     def isSymmetric(self, root):
