@@ -7,8 +7,10 @@ class Solution:
             data = p.split()
             d = data[0]
             for f in data[1:]:
-                file_data = f.split('(') # the left over ')' doesn't matter
-                content_to_files[file_data[1]].append(d+'/'+file_data[0])
+                c = f.rfind("(")
+                file_data = f[c+1:len(f)-1]
+                file_name = f[:c]
+                content_to_files[file_data].append(d+'/'+file_name)
         return [v for v in content_to_files.values() if len(v) > 1]
 
 s = Solution()
