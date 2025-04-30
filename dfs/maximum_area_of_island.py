@@ -32,16 +32,23 @@
 
 class Solution:
     
-    def dfs(self, grid, i, j, area=0):
+    def dfs(self, grid, i, j):
         grid[i][j] = 0
-        area += 1
+        area = 1  # Current cell counts as 1
         for (i1, j1) in [(0,1),(1,0),(0,-1),(-1,0)]:
             if 0<=i+i1<len(grid) and 0<=j+j1<len(grid[0]) and grid[i+i1][j+j1]==1:
-                area = self.dfs(grid, i+i1, j+j1, area)
-                # dont forget to update area with the return value.
+                area += self.dfs(grid, i+i1, j+j1)  # Add area from neighbors
         return area
-        
     
+    # this is alternate implementation too
+    # def dfs(self, grid, i, j, area=0):
+    #     grid[i][j] = 0
+    #     area += 1
+    #     for (i1, j1) in [(0,1),(1,0),(0,-1),(-1,0)]:
+    #         if 0<=i+i1<len(grid) and 0<=j+j1<len(grid[0]) and grid[i+i1][j+j1]==1:
+    #             area = self.dfs(grid, i+i1, j+j1, area)
+    #             # dont forget to update area with the return value.
+    #     return area
 
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         m = len(grid)
